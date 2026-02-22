@@ -1,5 +1,6 @@
 flask
-chromadb
+chromadb==0.5.3
 sentence-transformers
 langchain
+pydantic<2.0.0
 gunicorn
