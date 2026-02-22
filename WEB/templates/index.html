@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASH-CANNON | High-Velocity Loan Swarm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">CASH-CANNON</div>
+            <div class="tagline">The High-Velocity Agentic Swarm</div>
+        </header>
+
+        <main>
+            <!-- Chat Side -->
+            <section class="chat-section glass">
+                <div class="section-title">AI Knowledge Assistant</div>
+                <div id="chat-window" class="chat-window">
+                    <div class="message bot">Hello! I'm your AI assistant. You can ask me about loan rates, eligibility,
+                        or say 'Apply' to start.</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="user-input" placeholder="Type a message or 'Apply'...">
+                    <button id="send-btn">Send</button>
+                </div>
+            </section>
+
+            <!-- Action Side -->
+            <section class="action-section glass" id="action-section">
+                <div class="section-title">Loan Application Journey</div>
+                <div id="status-stepper" class="stepper">
+                    <div class="step active" id="step-1">1. Verification</div>
+                    <div class="step" id="step-2">2. Term Offer</div>
+                    <div class="step" id="step-3">3. Final Decision</div>
+                </div>
+
+                <!-- Step 1: Verification -->
+                <div id="verification-form" class="flow-step">
+                    <p>Welcome to the digital portal. Please enter your Customer ID to verify your identity.</p>
+                    <input type="text" id="customer-id-input" placeholder="Enter CID (e.g. C001)">
+                    <button class="primary-btn" onclick="verifyCustomer()">Verify Profile</button>
+                </div>
+
+                <!-- Step 2: Sales -->
+                <div id="sales-form" class="flow-step hidden">
+                    <p>Identity Verified! How much loan amount are you looking for?</p>
+                    <div class="input-group">
+                        <span>₹</span>
+                        <input type="number" id="loan-amount-input" placeholder="Desired Amount">
+                    </div>
+                    <button class="primary-btn" onclick="requestLoan()">Apply & Evaluate</button>
+                </div>
+
+                <!-- Step 3: Result -->
+                <div id="result-display" class="flow-step hidden">
+                    <div id="result-icon"></div>
+                    <h2 id="result-title">Reviewing...</h2>
+                    <p id="result-message"></p>
+                    <div id="sanction-link-area" class="hidden">
+                        <a id="sanction-download" href="#" class="download-btn">Fire the CASH-CANNON Sanction</a>
+                    </div>
+                    <button class="secondary-btn" onclick="resetFlow()">Restart Application</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

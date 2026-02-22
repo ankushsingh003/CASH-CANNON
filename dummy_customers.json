@@ -1,0 +1,122 @@
+[
+  {
+    "customer_id": "C001",
+    "name": "Arjun Sharma",
+    "age": 29,
+    "city": "Mumbai",
+    "current_loan_details": "None",
+    "credit_score": 750,
+    "pre_approved_limit": 500000,
+    "monthly_income": 80000,
+    "phone": "+91 9876543210",
+    "address": "123, Marine Drive, Mumbai, Maharashtra"
+  },
+  {
+    "customer_id": "C002",
+    "name": "Priya Verma",
+    "age": 34,
+    "city": "Bangalore",
+    "current_loan_details": "Car Loan - 300,000",
+    "credit_score": 680,
+    "pre_approved_limit": 300000,
+    "monthly_income": 65000,
+    "phone": "+91 9822334455",
+    "address": "45, Koramangala, Bangalore, Karnataka"
+  },
+  {
+    "customer_id": "C003",
+    "name": "Vikram Singh",
+    "age": 42,
+    "city": "Delhi",
+    "current_loan_details": "Home Loan - 4,500,000",
+    "credit_score": 810,
+    "pre_approved_limit": 1000000,
+    "monthly_income": 150000,
+    "phone": "+91 9988776655",
+    "address": "B-12, Karol Bagh, New Delhi, Delhi"
+  },
+  {
+    "customer_id": "C004",
+    "name": "Ananya Reddy",
+    "age": 27,
+    "city": "Hyderabad",
+    "current_loan_details": "None",
+    "credit_score": 720,
+    "pre_approved_limit": 400000,
+    "monthly_income": 55000,
+    "phone": "+91 9123456789",
+    "address": "High Tech City, Hyderabad, Telangana"
+  },
+  {
+    "customer_id": "C005",
+    "name": "Rohan Gupta",
+    "age": 31,
+    "city": "Pune",
+    "current_loan_details": "Personal Loan - 100,000",
+    "credit_score": 650,
+    "pre_approved_limit": 200000,
+    "monthly_income": 45000,
+    "phone": "+91 9811223344",
+    "address": "Viman Nagar, Pune, Maharashtra"
+  },
+  {
+    "customer_id": "C006",
+    "name": "Sneha Iyer",
+    "age": 28,
+    "city": "Chennai",
+    "current_loan_details": "None",
+    "credit_score": 790,
+    "pre_approved_limit": 700000,
+    "monthly_income": 95000,
+    "phone": "+91 9765432109",
+    "address": "Adyar, Chennai, Tamil Nadu"
+  },
+  {
+    "customer_id": "C007",
+    "name": "Amit Patel",
+    "age": 38,
+    "city": "Ahmedabad",
+    "current_loan_details": "None",
+    "credit_score": 740,
+    "pre_approved_limit": 600000,
+    "monthly_income": 75000,
+    "phone": "+91 9898989898",
+    "address": "Satellite Area, Ahmedabad, Gujarat"
+  },
+  {
+    "customer_id": "C008",
+    "name": "Kavita Rao",
+    "age": 45,
+    "city": "Kolkata",
+    "current_loan_details": "Personal Loan - 50,000",
+    "credit_score": 690,
+    "pre_approved_limit": 250000,
+    "monthly_income": 60000,
+    "phone": "+91 9001122334",
+    "address": "Salt Lake, Kolkata, West Bengal"
+  },
+  {
+    "customer_id": "C009",
+    "name": "Manish Pandey",
+    "age": 32,
+    "city": "Lucknow",
+    "current_loan_details": "None",
+    "credit_score": 710,
+    "pre_approved_limit": 350000,
+    "monthly_income": 50000,
+    "phone": "+91 9415001122",
+    "address": "Gomti Nagar, Lucknow, Uttar Pradesh"
+  },
+  {
+    "customer_id": "C010",
+    "name": "Sonia Malhotra",
+    "age": 26,
+    "city": "Chandigarh",
+    "current_loan_details": "Two Wheeler Loan - 40,000",
+    "credit_score": 760,
+    "pre_approved_limit": 450000,
+    "monthly_income": 62000,
+    "phone": "+91 9646001122",
+    "address": "Sector 17, Chandigarh"
+  }
+]

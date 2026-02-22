@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+chroma_db/
+.env
+venv/
+.DS_Store
+sanction_letter_*.txt
+*.db
+*.sqlite3
