@@ -26,3 +26,4 @@ if __name__ == "__main__":
     agent = SalesAgent()
     result = agent.negotiate_loan(500000, 760)
     print(f"Result: {result}")
+
