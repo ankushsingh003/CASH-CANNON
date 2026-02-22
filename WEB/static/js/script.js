@@ -4,6 +4,7 @@ const sendBtn = document.getElementById('send-btn');
 const actionSection = document.getElementById('action-section');
 
 let currentCustomerId = "";
+let currentUserName = "";
 
 // 1. Chat Logic
 function addMessage(text, isUser = false) {
@@ -51,9 +52,15 @@ userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleCha
 
 // 2. Application Flow Logic
 async function verifyCustomer() {
+    const nameInput = document.getElementById('user-name-input');
     const cidInput = document.getElementById('customer-id-input');
+    const name = nameInput.value.trim();
     const cid = cidInput.value.trim();
-    if (!cid) return;
+
+    if (!name || !cid) {
+        alert("Please enter both Name and Customer ID.");
+        return;
+    }
 
     try {
         const response = await fetch('/api/verify', {
@@ -65,6 +72,7 @@ async function verifyCustomer() {
 
         if (data.status === "VERIFIED") {
             currentCustomerId = cid;
+            currentUserName = name;
             transitionToStep(2);
         } else {
             alert(data.message);
@@ -93,7 +101,11 @@ async function requestLoan() {
         const response = await fetch('/api/underwrite', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ customer_id: currentCustomerId, amount: amount })
+            body: JSON.stringify({
+                customer_id: currentCustomerId,
+                amount: amount,
+                custom_name: currentUserName
+            })
         });
         const data = await response.json();
 
@@ -156,6 +168,8 @@ function transitionToStep(stepNum) {
 
 function resetFlow() {
     currentCustomerId = "";
+    currentUserName = "";
+    document.getElementById('user-name-input').value = "";
     document.getElementById('customer-id-input').value = "";
     document.getElementById('loan-amount-input').value = "";
     transitionToStep(1);

@@ -51,9 +51,9 @@ def underwrite():
     data = request.json
     customer_id = data.get('customer_id')
     amount = int(data.get('amount'))
+    custom_name = data.get('custom_name')
     
-    # 1. Negotiation (Implicitly handled here to get the rate for the sanction)
-    # In a real app, this would be more decoupled
+    # 1. Negotiation
     customer_data = next((c for c in underwriting.customers if c["customer_id"] == customer_id), None)
     s_result = sales.negotiate_loan(amount, customer_data["credit_score"])
     
@@ -62,15 +62,18 @@ def underwrite():
     
     # 3. Sanction if approved
     if u_result["status"] == "APPROVED_INSTANT":
+        # Use custom_name if provided, else fallback to bureau name
+        final_name = custom_name if custom_name else customer_data["name"]
+        
         l_result = sanction.generate_letter(
-            customer_data["name"], 
+            final_name, 
             amount, 
             s_result["offered_rate"], 
             s_result["tenure"]
         )
         u_result["letter_url"] = l_result["file_path"]
         u_result["offered_rate"] = s_result["offered_rate"]
-        u_result["name"] = customer_data["name"]
+        u_result["name"] = final_name
 
     return jsonify(u_result)
 

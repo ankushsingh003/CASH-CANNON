@@ -39,7 +39,8 @@ class IntegratedLoanJourney:
 
     def start_application_flow(self):
         print("\n" + "-"*30)
-        print("STEP 1: CUSTOMER VERIFICATION")
+        print("STEP 1: CUSTOMER IDENTIFICATION")
+        custom_name = input("[Identification] Please enter your Full Name: ").strip()
         customer_id = input("[Verification] Please enter your Customer ID (e.g., C001 to C010): ").strip().upper()
         
         v_result = self.verification.verify_customer(customer_id)
@@ -47,7 +48,7 @@ class IntegratedLoanJourney:
             print(f"\nAI: {v_result['message']}")
             return
 
-        print(f"\nAI: {v_result['message']}")
+        print(f"\nAI: Customer profile verified. Proceeding with name: {custom_name}")
         time.sleep(1)
 
         print("\n" + "-"*30)
@@ -93,7 +94,7 @@ class IntegratedLoanJourney:
             print("\n" + "-"*30)
             print("STEP 4: FIRING THE CASH-CANNON")
             l_result = self.sanction.generate_letter(
-                customer_data["name"], 
+                custom_name, 
                 amount, 
                 s_result["offered_rate"], 
                 s_result["tenure"]
